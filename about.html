@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Defenceology</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Additional styles if needed */
+    </style>
+</head>
+<body class="bg-black text-gray-300 font-mono">
+    <div class="container mx-auto p-6">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl text-red-600">Defenceology</h1>
+            <p class="text-xl text-grey-400 mt-2">- STUDY OF DEFENCE</p>
+            <p class="text-xl text-gray-400 mt-2">We're like ninjas in the shadows, bringing you the latest in military might and more!</p>
+        </header>
+        <section class="mt-12 p-6 bg-black-800 rounded-lg shadow-lg max-w-4xl mx-auto">
+            <h2 class="text-3xl text-red-600 mb-4">Who Are We?</h2>
+            <p class="mt-4">Who Are We?
+                Got an issue with us? Too bad. We’re the shadowy figures lurking in the depths of military secrets. We dig up the dirt on global defense systems and strategies. Don’t like it? Tough. We’re the unseen, the unafraid, and the unrelenting. Now, if you’re ready to join the ranks of the informed, welcome to our world.
+                
+                
+                
+                
+            </p>
+            <br>
+
+            <section class="">
+                <h1 class="font-bold text-5xl text-red-600 flex justify-center">Facts</h1>
+                <br>
+                <section class="bg-black text-white">
+                    <ul id="facts-1"></ul>
+                    <br>
+                    <ul id="facts-2"></ul>
+                    <br>
+                    <ul id="facts-3"></ul>
+                    <br>
+                    <ul id="facts-4"></ul>
+                    <br>
+                    <ul id="facts-5"></ul>
+                    <br>
+                    <ul id="facts-6"></ul>
+                    <br>
+                    <ul id="facts-7"></ul>
+                    <br>
+                    <ul id="facts-8"></ul>
+                    <br>
+                    <ul id="facts-9"></ul>
+                    <br>
+                    <ul id="facts-10"></ul>
+                </section>
+            
+                <script>
+                    // Function to fetch and display facts
+                    function fetchAndDisplayFacts() {
+                        const factContainers = [
+                            document.getElementById('facts-1'),
+                            document.getElementById('facts-2'),
+                            document.getElementById('facts-3'),
+                            document.getElementById('facts-4'),
+                            document.getElementById('facts-5'),
+                            document.getElementById('facts-6'),
+                            document.getElementById('facts-7'),
+                            document.getElementById('facts-8'),
+                            document.getElementById('facts-9'),
+                            document.getElementById('facts-10')
+                        ];
+            
+                        // Fetch facts 10 times
+                        for (let i = 0; i < 10; i++) {
+                            fetch('https://catfact.ninja/fact')
+                                .then(response => response.json())
+                                .then(data => {
+                                    const listItem = document.createElement('li');
+                                    listItem.textContent = data.fact;
+            
+                                    // Add the fact to the corresponding container
+                                    factContainers[i].appendChild(listItem);
+                                })
+                                .catch(error => {
+                                    console.error('Error fetching cat fact:', error);
+                                });
+                        }
+                    }
+            
+                    // Call the function to fetch and display the facts
+                    fetchAndDisplayFacts();
+                </script>
+            </section>
+            
+</html>
